@@ -1,0 +1,8 @@
+# example from google 
+/_help
+
+# temp file while ppt is open
+/ui/~*
+
+# apple dir config
+.DS_Store

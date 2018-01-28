@@ -5,3 +5,6 @@
 - [ ] Reload app configurations via REST
 - [ ] Search directly for SPL commands & .conf
 - [ ] Links to splunks main pages
+
+# Notes
+- Load URL of active tab to get the splunk instance
