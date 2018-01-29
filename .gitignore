@@ -1,6 +1,9 @@
 # example from google 
 /_help
 
+# vscode settings
+/.vscode
+
 # temp file while ppt is open
 /ui/~*
 

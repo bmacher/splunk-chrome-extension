@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Splunk Chrome Extension</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <script src="popup.js"></script>
+  </head>
+  
+  <body>
+    
+    <!-- EXTENSION -->
+    <div class="ext-wrapper">
+      <!-- HEADER -->
+      <header class="ext-header">
+        <div class="ext-header-icon">
+          <span>O</span>
+        </div>
+        <div class="ext-header-title">
+          <h1>Splunk Chrome Extension</h1>
+        </div>
+      </header>
+
+      <!-- BODY -->
+      <main class="ext-main">
+        <!-- SECTION RELOAD -->
+        <div class="ext-sec-reload">
+          <div class="ext-sec-itme-span-4">
+            <h1 class="ext-sec-title">Reload Configurations</h1>            
+          </div>
+          
+          <!-- select host -->
+          <div class="ext-sec-item">
+            <select id="inp_host" required>
+              <option value="localhost:8000" selected>localhost:8000</option>
+              <option value="my_server:80">my_server:80</option>
+            </select>
+          </div>
+
+          <!-- select app -->
+          <div class="ext-sec-item">
+            <select id="inp_app" require>
+              <option value="MY_APP" selected>MY_APP</option>
+              <option value="APP_OF_MINE">APP_OF_MINE</option>
+              <option value="APP_OF_MY_OWN">APP_OF_MY_OWN</option>
+            </select>
+          </div>
+
+          <!-- select target -->
+          <div class="ext-sec-item">
+            <select id="inp_target" required>
+              <option value="props" selected>props.conf</option>
+              <option value="inputs">inputs.conf</option>
+              <option value="indexes">indexes.conf</option>
+              <option value="views">views</option>
+              <option value="serverclass.seed.xml.conf">serverclass.seed.xml.conf</option>
+            </select>
+          </div>
+
+          <!-- _reload config -->
+          <div class="ext-sec-item">
+            <button class="ext-btn" id="btn_reload">_reload</button>
+          </div>
+        </div>
+
+        <!-- SECTION REFERENCE -->
+        <div class="ext-sec-ref">
+          <div class="ext-sec-item">
+            <h1 class="ext-sec-title">SPL Command</h1>
+          </div>
+          <div class="ext-sec-item-span-2">
+            <h1 class="ext-sec-title">Config File</h1>
+          </div>
+
+          <!-- open command -->
+          <div class="ext-sec-item">
+            <input type="text" id="inp_cmd" class="ext-sec-item-input">
+            <button id="btn_spl" class="ext-btn">Open</button>
+          </div>
+
+          <!-- open config -->
+          <div class="ext-sec-item">
+            <input type="text" id="inp_conf" class="ext-sec-item-input">
+            <button id="btn_conf" class="ext-btn">Open</button>
+          </div>
+
+          <!-- _bump -->
+          <div class="ext-sec-item">
+            <button id="btn_bump" class="ext-btn">_bump</button>
+          </div>
+        </div>
+        
+        <!-- SECTION LINKS -->
+        <div class="ext-sec-lnk">
+          <div class="ext-sec-item">
+            <a href="" class="ext-sec-lnk-link">DOCS</a>
+          </div>
+          <div class="ext-sec-item">
+            <a href="" class="ext-sec-lnk-link">DOCS</a>
+          </div>
+          <div class="ext-sec-item">
+            <a href="" class="ext-sec-lnk-link">DOCS</a>
+          </div>
+          <div class="ext-sec-item">
+            <a href="" class="ext-sec-lnk-link">DOCS</a>
+          </div>
+        </div>
+      </main>
+      
+      <!-- FOOTER -->
+      <footer class="ext-footer">
+        <span class="ext-footer-cpyr">by Benjamin Macher</span>
+      </footer>
+    </div>
+
+  </body>
+</html>
