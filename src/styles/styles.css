@@ -1,6 +1,8 @@
 :root {
-  --ext-blue: #62BDE5;
-  --ext-green: #9ED57A;
+  --blue:     #62BDE5;
+  --green:    #9ED57A;
+  --grey:     #868E96;
+  --darkgrey: #495057;
 }
 
 html, body {
@@ -15,10 +17,52 @@ h1, span {
   padding: 0;
 }
 
+button {
+  width: 100%;
+  height: 30px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(to right, var(--blue) , var(--green));
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: linear-gradient(to right, var(--blue) , var(--green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+button:focus {
+  outline: none;
+  text-decoration: underline;
+}
+
+input {
+  border: 1px solid var(--darkgrey);
+}
+
+select {
+  width: 100%;
+  height: 30px;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  color: #495057;
+  vertical-align: middle;
+  border: 1px solid var(--darkgrey);
+  border-radius: 2px;
+}
+
+button, select, a {
+  cursor: pointer;
+}
+
+/* EXTENSION WRAPPER */
 .ext-wrapper {
   width: 600px;
   border: solid 1px;
-  border-image: linear-gradient(to right, var(--ext-blue) , var(--ext-green));
+  border-image: linear-gradient(to right, var(--blue) , var(--green));
   border-image-slice: 1;
 }
 
@@ -37,27 +81,85 @@ h1, span {
   text-align: center;
   color: var(--blue);
   background: #fff;
-  border-bottom: 1px solid var(--ext-blue)
+  border-bottom: 1px solid var(--blue)
 }
 
 .ext-header-icon > span {
   font-size: 20pt;
-  color: var(--ext-blue);
+  color: var(--blue);
 }
 
 .ext-header-title {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 550px;
+  width: calc(100% - 50px);
   height: 50px;
-  background: linear-gradient(to right, var(--ext-blue) , var(--ext-green));
+  background: linear-gradient(to right, var(--blue) , var(--green));
   border-bottom: solid 1px;
-  border-image: linear-gradient(to right, var(--ext-blue) , var(--ext-green));
+  border-image: linear-gradient(to right, var(--blue) , var(--green));
   border-image-slice: 1;
 }
 
 .ext-header-title > h1 {
   font-size: 20pt;
   color: #fff;
+}
+
+/* BODY */
+.ext-main {
+  padding: 8px;
+}
+
+.ext-main h1.ext-sec-title {
+  font-size: 1.3rem;
+}
+
+.ext-main > div {
+  margin-bottom: 10px;
+}
+
+.ext-sec-item {
+  display: inline-block;
+  padding: 5px;
+  text-align: left;
+}
+
+/* SECTION RELOAD */
+.ext-sec-reload {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--grey);
+}
+
+.ext-sec-item-span-4 {
+  grid-column: span 4;
+}
+
+/* SECTION REFERENCE */
+.ext-sec-ref {
+  display: grid;
+  grid-template-columns: 3fr 3fr 2fr;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--grey);
+}
+
+.ext-sec-ref > .ext-sec-item {
+  display: flex;
+}
+
+.ext-sec-ref > .ext-sec-item > input {
+  border: 1px solid #aaa;
+  border-right: 0;
+  border-radius: 5px 0 0 5px;
+}
+
+.ext-sec-item-span-2 {
+  grid-column: span 2;
+}
+
+button.ext-btn-zero-left-border {
+  border-left: 0; 
+  border-radius: 0 5px 5px 0;
 }
