@@ -1,20 +1,74 @@
 :root {
-  --blue:     #62BDE5;
-  --green:    #9ED57A;
-  --grey:     #868E96;
-  --darkgrey: #495057;
+  --blue:      #62BDE5;
+  --green:     #9ED57A;
+  --grey:      #868E96;
+  --lightgrey: #AAAAAA;
+  --darkgrey:  #495057;
 }
 
+/* GLOBAL SETTINGS */
 html, body {
   margin: 0;
-  padding: 0;
+  padding: 10px;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
 }
 
-h1, span {
+h1, p, span {
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.ext-lnk-blue {
+  color: #FFF;
+  background: var(--blue);
+  border: 1px solid var(--blue);
+}
+
+a.ext-lnk-blue:hover {
+  color: var(--blue);
+  background: #FFF;
+  box-shadow: 0 0 2px 1px var(--blue);
+}
+
+a.ext-lnk-white-blue {
+  color: var(--blue);
+  background: #FFF;
+  border: 1px solid var(--blue);
+}
+
+a.ext-lnk-white-blue:hover {
+  color: #FFF;
+  background: var(--blue);
+  box-shadow: 0 0 2px 1px var(--blue);
+}
+
+a.ext-lnk-green {
+  color: #FFF;
+  background: var(--green);
+  border: 1px solid var(--green);
+}
+
+a.ext-lnk-green:hover {
+  color: var(--green);
+  background: #FFF;
+  box-shadow: 0 0 2px 1px var(--green);
+}
+
+a.ext-lnk-white-green {
+  color: var(--green);
+  background: #FFF;
+  border: 1px solid var(--green);
+}
+
+a.ext-lnk-white-green:hover {
+  color: #FFF;
+  background: var(--green);
+  box-shadow: 0 0 2px 1px var(--green);
 }
 
 button {
@@ -24,7 +78,7 @@ button {
   font-weight: 700;
   color: #fff;
   background: linear-gradient(to right, var(--blue) , var(--green));
-  border: 1px solid #aaa;
+  border: 1px solid var(--lightgrey);
   border-radius: 5px;
 }
 
@@ -34,9 +88,9 @@ button:hover {
   -webkit-text-fill-color: transparent;
 }
 
-button:focus {
+button:focus, input:focus, select:focus {
   outline: none;
-  text-decoration: underline;
+  box-shadow: 0 0 2px 1px var(--darkgrey)
 }
 
 input {
@@ -58,10 +112,27 @@ button, select, a {
   cursor: pointer;
 }
 
+/* Input Group */
+.ext-inp-grp-btn {
+  border-left: 0; 
+  border-radius: 0 5px 5px 0;
+}
+
+.ext-inp-grp-btn {
+  border-left: 1px solid var(--lightgrey);
+}
+
+.ext-inp-grp-inp {
+  border: 1px solid var(--lightgrey);
+  border-right: 0;
+  border-radius: 5px 0 0 5px;
+}
+
 /* EXTENSION WRAPPER */
 .ext-wrapper {
   width: 600px;
-  border: solid 1px;
+  border: solid 2px;
+  border-bottom: 0;
   border-image: linear-gradient(to right, var(--blue) , var(--green));
   border-image-slice: 1;
 }
@@ -81,7 +152,7 @@ button, select, a {
   text-align: center;
   color: var(--blue);
   background: #fff;
-  border-bottom: 1px solid var(--blue)
+  border-bottom: 2px solid var(--blue)
 }
 
 .ext-header-icon > span {
@@ -96,7 +167,7 @@ button, select, a {
   width: calc(100% - 50px);
   height: 50px;
   background: linear-gradient(to right, var(--blue) , var(--green));
-  border-bottom: solid 1px;
+  border-bottom: solid 2px;
   border-image: linear-gradient(to right, var(--blue) , var(--green));
   border-image-slice: 1;
 }
@@ -108,7 +179,7 @@ button, select, a {
 
 /* BODY */
 .ext-main {
-  padding: 8px;
+  padding: 8px 8px 0 8px;
 }
 
 .ext-main h1.ext-sec-title {
@@ -116,7 +187,7 @@ button, select, a {
 }
 
 .ext-main > div {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .ext-sec-item {
@@ -149,17 +220,31 @@ button, select, a {
   display: flex;
 }
 
-.ext-sec-ref > .ext-sec-item > input {
-  border: 1px solid #aaa;
-  border-right: 0;
-  border-radius: 5px 0 0 5px;
-}
-
 .ext-sec-item-span-2 {
   grid-column: span 2;
 }
 
-button.ext-btn-zero-left-border {
-  border-left: 0; 
-  border-radius: 0 5px 5px 0;
+/* SECTION LINKS */
+.ext-sec-lnk {
+  display: flex;
+  justify-content:space-between;
+  padding: 0 20px;
+}
+
+.ext-sec-lnk > .ext-sec-item > a {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 70px;
+  border-radius: 50%;
+}
+
+/* FOOTER */
+.ext-footer {
+  padding: 1px 5px;
+  text-align: right;
+  color: #FFF;
+  background: linear-gradient(to right, var(--blue) , var(--green));
 }
