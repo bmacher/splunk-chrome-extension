@@ -1,9 +1,12 @@
-# in progress...
+# Cancelled...
 
-As I work with Splunk in my company I know it is sometimes annoying to reload certain configs which I have done in the filesystem. Sure you can restart Splunk (well you can not if several people working on the same instance) or reload the config via a REST search. For Example:
+I tried to make a chrome extension, that reloads a selected config or view of Splunk Enterprsie. Unfortunately I was not able to connect to Splunks backend. I tried the following things:
 
-```
-| rest servicesNS/-/MySplunkApp/configs/conf-props/_reload splunk_server=local
-```
+**1. Request to Splunks management port (default: 8089)**
+* This fails because you can only connect to the management port via https (default), which is denied by the browser if you do not have a valid certificate.
 
-This will reload all the configs available in the context of M MySplunkApp. 
+**2. Request to /splunkd/__raw/, which will forward the request to the Splunk deamon**
+* There is no API for /configs/conf-XY or /data/ui/views.
+
+**3. Via direct search request: <host>:8000/.../search?q=<| rest ...>** 
+* Is denied by CORS.
